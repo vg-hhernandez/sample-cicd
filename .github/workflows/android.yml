@@ -16,6 +16,7 @@ jobs:
           java-version: 8
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
-        git update-index --chmod=+x ./gradlew
+      - name: Make gradlew executable
+        run: chmod +ux ./gradlew
       - name: Build App
         run: ./gradlew build
